@@ -1,0 +1,23 @@
+{
+  "name": "root-node-template",
+  "version": "1.0.0",
+  "description": "Base template to build Node.js application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cercedo/root-node-template.git"
+  },
+  "keywords": [
+    "template",
+    "Node.js"
+  ],
+  "author": "Cercedo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Cercedo/root-node-template/issues"
+  },
+  "homepage": "https://github.com/Cercedo/root-node-template#readme"
+}
