@@ -1,25 +1,26 @@
-# 🧩 root-node-template
+# ☘️ uvita-be
 
-A base template to build Node.js application.
+Backend application designed to streamline and manage all aspects of a clinic's operational processes.
 
 ## 👀 About
 
 ### 🎯 Features
 
-- **Pre-configured development tools**: This template comes with pre-configured development tools like Typescript, ESLint, Prettier, Nodemon, Husky, Lint-staged, Commitlint and Jest.
+- **Development tools**: This application comes with pre-configured development tools  to help you write clean and maintainable code. These tools include Typescript, ESLint, Prettier, Nodemon, Husky, Lint-staged, Commitlint and Jest.
 
 ## 🚀 Getting Started
 
 ### ❗ Prerequisites
 
 - [Node.js v20.15.1](https://nodejs.org/en)
+- [nvm (optional)](https://github.com/nvm-sh/nvm)
 
 ### ⚙️ Installation
 
 1. Clone the repository
 
     ```bash
-    git clone https://github.com/Cercedo/root-node-template.git
+    git clone https://github.com/Cercedo/uvita-be.git
     ```
 
 2. Install the dependencies.
@@ -42,7 +43,7 @@ Now, you're ready to start building your application!
 
 ## 💎 Acknowledgments
 
-This template was inspired by [Setup Node.js Projects with TypeScript, ESLint and Prettier](https://medium.com/@apeview/setup-node-js-projects-with-typescript-eslint-and-prettier-4c1f1fecd107)
+This application was duplicated from [root-node-template](https://github.com/Cercedo/root-node-template).
 
 Check out these resources to learn more about writing clean code:
 
