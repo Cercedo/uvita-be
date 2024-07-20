@@ -8,7 +8,7 @@ module.exports = {
     'plugin:import/typescript',
   ],
   parser: '@typescript-eslint/parser',
-  plugins: ['@typescript-eslint'],
+  plugins: ['@typescript-eslint', 'unused-imports'],
   settings: {
     'import/resolver': {
       node: true,
@@ -27,6 +27,24 @@ module.exports = {
         argsIgnorePattern: '^_',
       },
     ],
+    'import/order': [
+      'error',
+      {
+        groups: [
+          'builtin',
+          'external',
+          'internal',
+          'parent',
+          'sibling',
+          'index',
+          'object',
+          'type',
+        ],
+        'newlines-between': 'always',
+        alphabetize: { order: 'asc', caseInsensitive: true },
+      },
+    ],
+    'unused-imports/no-unused-imports': 'error',
     'import/no-cycle': 'error',
     eqeqeq: 'error',
     'no-eval': 'error',
