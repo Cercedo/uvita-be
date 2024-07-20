@@ -16,7 +16,7 @@ module.exports = {
     },
   },
   root: true,
-  ignorePatterns: ['dist', '.eslintrc.cjs', 'node_modules'],
+  ignorePatterns: ['dist', '.eslintrc.cjs', 'node_modules', '**/*.json'],
   rules: {
     'no-unused-vars': [
       'error',
