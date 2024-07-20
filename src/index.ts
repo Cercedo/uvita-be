@@ -1,14 +1,15 @@
-import { getRandomId, sumNumbers } from '@/utils';
+import express, { Request, Response } from 'express';
 
-export const startGreeting = () => {
-  console.log('🧩 Hello world :)');
+import { startGreeting } from '@/utils';
 
-  const id = getRandomId();
-  console.log("- 🔑 Here's a random ID: ", id);
+const app: express.Express = express();
+const port = 3000;
 
-  const numbers = [1, 2, 3, 4, 5];
-  const sum = sumNumbers(...numbers);
-  console.log(`- 🧮 Sum of numbers ${numbers.join(', ')} equal to ${sum}`);
-};
+app.get('/', (request: Request, response: Response) => {
+  startGreeting();
+  response.send({ data: 'Hello world! 🍏' });
+});
 
-startGreeting();
+app.listen(port, () => {
+  console.log(`Server is running at http://localhost:${port}`);
+});

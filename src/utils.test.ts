@@ -1,4 +1,4 @@
-import { getRandomId, sumNumbers } from './utils';
+import { getRandomId, startGreeting, sumNumbers } from './utils';
 
 describe('Get random ID', () => {
   test('Should return a string', () => {
@@ -27,5 +27,12 @@ describe('Sum numbers', () => {
   test('Should return the same number when only one number is provided', () => {
     const sum = sumNumbers(64);
     expect(sum).toBe(64);
+  });
+});
+
+describe('Start greeting', () => {
+  test('Should return undefined', () => {
+    const greeting = startGreeting();
+    expect(greeting).toBeUndefined();
   });
 });
