@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint . --ext ts,js --report-unused-disable-directives --max-warnings 0 ./src",
+    "lint": "eslint . --ext ts --report-unused-disable-directives --max-warnings 0 ./src",
     "format": "prettier --write --ignore-unknown --config .prettierrc ./src",
     "prepare": "husky",
     "precommit": "lint-staged",
