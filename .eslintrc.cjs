@@ -19,7 +19,6 @@ module.exports = {
         argsIgnorePattern: '^_',
       },
     ],
-    'import/no-cycle': 'error',
     eqeqeq: 'error',
     'no-eval': 'error',
     curly: 'error',
