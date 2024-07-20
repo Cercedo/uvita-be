@@ -5,6 +5,8 @@
   "description": "Base template to build Node.js application",
   "main": "index.js",
   "scripts": {
+    "build": "tsc",
+    "dev": "nodemon",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint . --ext ts --report-unused-disable-directives --max-warnings 0 ./src",
     "format": "prettier --write --ignore-unknown --config .prettierrc ./src",
