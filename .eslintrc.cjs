@@ -4,9 +4,17 @@ module.exports = {
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:prettier/recommended',
+    'plugin:import/recommended',
+    'plugin:import/typescript',
   ],
   parser: '@typescript-eslint/parser',
   plugins: ['@typescript-eslint'],
+  settings: {
+    'import/resolver': {
+      node: true,
+      typescript: true,
+    },
+  },
   root: true,
   ignorePatterns: ['dist', '.eslintrc.cjs', 'node_modules'],
   rules: {
@@ -19,6 +27,7 @@ module.exports = {
         argsIgnorePattern: '^_',
       },
     ],
+    'import/no-cycle': 'error',
     eqeqeq: 'error',
     'no-eval': 'error',
     curly: 'error',
