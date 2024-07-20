@@ -1,7 +1,7 @@
 {
-  "name": "root-node-template",
+  "name": "uvita-be",
   "version": "1.0.0",
-  "description": "Base template to build Node.js application",
+  "description": "Backend application designed to streamline and manage all aspects of a clinic's operational processes",
   "main": "index.js",
   "scripts": {
     "build": "tsc && tsc-alias",
@@ -17,18 +17,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Cercedo/root-node-template.git"
+    "url": "git+https://github.com/Cercedo/uvita-be.git"
   },
   "keywords": [
-    "template",
-    "Node.js"
+    "Node.js",
+    "clinic"
   ],
   "author": "Cercedo",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Cercedo/root-node-template/issues"
+    "url": "https://github.com/Cercedo/uvita-be/issues"
   },
-  "homepage": "https://github.com/Cercedo/root-node-template#readme",
+  "homepage": "https://github.com/Cercedo/uvita-be#readme",
   "devDependencies": {
     "@commitlint/cli": "^19.3.0",
     "@commitlint/config-conventional": "^19.2.2",
