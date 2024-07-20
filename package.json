@@ -6,7 +6,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint . --ext ts,js --report-unused-disable-directives --max-warnings 0 ./src",
+    "format": "prettier --write --ignore-unknown --config .prettierrc ./src",
     "prepare": "husky",
+    "precommit": "lint-staged",
     "commitlint": "commitlint --edit"
   },
   "repository": {
@@ -36,6 +39,7 @@
     "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-prettier": "^5.2.1",
     "husky": "^9.1.1",
+    "lint-staged": "^15.2.7",
     "nodemon": "^3.1.4",
     "prettier": "^3.3.3",
     "ts-node": "^10.9.2",
