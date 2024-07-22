@@ -1,11 +1,10 @@
 import cors from 'cors';
-import express, { Request, Response } from 'express';
+import express from 'express';
 import helmet from 'helmet';
-
-import { startGreeting } from '@/utils';
 
 import ErrorMiddleware from './middlewares/errorMiddleware';
 import NotFoundMiddleware from './middlewares/notFoundMiddleware';
+import appRouter from './router';
 
 ////---- Initialization -------------------------------------------------------
 export const app: express.Express = express();
@@ -17,10 +16,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(helmet());
 app.use(express.static('public'));
 
-app.get('/', (_req: Request, res: Response) => {
-  startGreeting();
-  res.send({ data: 'Hello world! 🍏' });
-});
+////---- Routes ---------------------------------------------------------------
+app.use('/api', appRouter);
 
 ////---- Error handling -------------------------------------------------------
 app.use(NotFoundMiddleware.handle);
