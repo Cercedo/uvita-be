@@ -6,7 +6,7 @@ export const app: express.Express = express();
 
 app.use(express.static('public'));
 
-app.get('/', (request: Request, response: Response) => {
+app.get('/', (_req: Request, res: Response) => {
   startGreeting();
-  response.send({ data: 'Hello world! 🍏' });
+  res.send({ data: 'Hello world! 🍏' });
 });
