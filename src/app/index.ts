@@ -21,4 +21,4 @@ app.use('/api', appRouter);
 
 ////---- Error handling -------------------------------------------------------
 app.use(NotFoundMiddleware.handle);
-app.use(ErrorMiddleware.execute);
+app.use(ErrorMiddleware.handle);

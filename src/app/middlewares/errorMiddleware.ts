@@ -2,7 +2,7 @@ import { Request, Response, NextFunction } from 'express';
 import createHttpError, { HttpError } from 'http-errors';
 
 class ErrorMiddleware {
-  public execute = (
+  public handle = (
     error: unknown,
     _request: Request,
     response: Response,
