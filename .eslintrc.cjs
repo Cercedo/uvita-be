@@ -18,13 +18,16 @@ module.exports = {
   root: true,
   ignorePatterns: ['dist', '.eslintrc.cjs', 'node_modules', '**/*.json'],
   rules: {
-    'no-unused-vars': [
+    'no-unused-vars': 'off',
+    '@typescript-eslint/no-unused-vars': [
       'error',
       {
         vars: 'all',
-        args: 'after-used',
-        ignoreRestSiblings: true,
+        args: 'all',
         argsIgnorePattern: '^_',
+        caughtErrorsIgnorePattern: '^_',
+        destructuredArrayIgnorePattern: '^_',
+        ignoreRestSiblings: true,
       },
     ],
     'import/order': [
@@ -51,5 +54,6 @@ module.exports = {
     curly: 'error',
     'prefer-const': 'error',
     'no-var': 'error',
+    'no-console': 'error',
   },
 };
