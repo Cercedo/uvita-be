@@ -3,6 +3,7 @@ import express, { Request, Response } from 'express';
 import { startGreeting } from '@/utils';
 
 import ErrorMiddleware from './middlewares/errorMiddleware';
+import NotFoundMiddleware from './middlewares/notFoundMiddleware';
 
 ////---- Initialization -------------------------------------------------------
 export const app: express.Express = express();
@@ -15,4 +16,5 @@ app.get('/', (_req: Request, res: Response) => {
 });
 
 ////---- Error handling -------------------------------------------------------
+app.use(NotFoundMiddleware.handle);
 app.use(ErrorMiddleware.execute);
