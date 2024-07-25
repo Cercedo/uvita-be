@@ -8,7 +8,10 @@ import GetAllPatientService from '@/features/patient/application/services/getAll
 import PatientRepositoryImpl from '@/features/patient/infraestructure/repositories/patientRepositoryImpl';
 
 import requestValidatorMiddlewate from './middlewares/requestValidatorMiddlewate';
-import { patientIdSchema } from './middlewares/validation/schemas';
+import {
+  patientIdSchema,
+  createPatientSchema,
+} from './middlewares/validation/schemas';
 import PatientController from './patientController';
 
 ////---- Initialization -------------------------------------------------------

@@ -2,11 +2,10 @@ import { NextFunction, Request, Response } from 'express';
 import createHttpError from 'http-errors';
 import { StatusCodes } from 'http-status-codes';
 
-import GetAllPatientService from '@/features/patient/application/services/getAllPatientService';
-
 import {
   CreatePatientService,
   GetByIdPatientService,
+  GetAllPatientService,
 } from '../application/services';
 
 class PatientController {
@@ -24,7 +23,10 @@ class PatientController {
     response.status(StatusCodes.OK).json(data);
   };
 
-  public create = async (request: Request, response: Response) => {
+  public create = async (
+    request: Request,
+    response: Response
+  ): Promise<void> => {
     const data = await this.createPatientService.execute(request.body);
     response.status(StatusCodes.CREATED).json(data);
   };
