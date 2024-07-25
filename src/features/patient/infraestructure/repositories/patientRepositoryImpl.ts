@@ -50,6 +50,10 @@ class PatientRepositoryImpl implements PatientRepository {
       },
     ];
   }
+
+  public async create(patient: PatientEntity): Promise<PatientEntity> {
+    return patient;
+  }
 }
 
 export default PatientRepositoryImpl;
