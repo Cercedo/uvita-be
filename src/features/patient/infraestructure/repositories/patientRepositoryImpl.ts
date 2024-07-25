@@ -2,7 +2,7 @@ import { PatientEntity } from '@/features/patient/domain/entities/patientEntity'
 import { PatientRepository } from '@/features/patient/domain/repositories/patientRepository';
 
 class PatientRepositoryImpl implements PatientRepository {
-  async getAll(): Promise<PatientEntity[]> {
+  public async getAll(): Promise<PatientEntity[]> {
     return [
       {
         identifierType: 'NATIONAL_ID',
