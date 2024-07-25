@@ -1,3 +1,3 @@
-export interface ServiceInterface {
-  execute: (...args: unknown[]) => unknown;
+export interface ServiceInterface<TParams = void, TReturn = void> {
+  execute: (params: TParams) => TReturn;
 }
