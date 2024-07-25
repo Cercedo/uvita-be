@@ -1,14 +1,19 @@
-import { Request, Response } from 'express';
+import { NextFunction, Request, Response } from 'express';
+import createHttpError from 'http-errors';
 import { StatusCodes } from 'http-status-codes';
 
 import GetAllPatientService from '@/features/patient/application/services/getAllPatientService';
 
-import { CreatePatientService } from '../application/services';
+import {
+  CreatePatientService,
+  GetByIdPatientService,
+} from '../application/services';
 
 class PatientController {
   constructor(
     private getAllPatientService: GetAllPatientService,
-    private createPatientService: CreatePatientService
+    private createPatientService: CreatePatientService,
+    private getByIdPatientService: GetByIdPatientService
   ) {}
 
   public getAll = async (
@@ -22,6 +27,23 @@ class PatientController {
   public create = async (request: Request, response: Response) => {
     const data = await this.createPatientService.execute(request.body);
     response.status(StatusCodes.CREATED).json(data);
+  };
+
+  public getById = async (
+    request: Request,
+    response: Response,
+    next: NextFunction
+  ): Promise<void> => {
+    const { id } = request.params;
+
+    const promise = this.getByIdPatientService.execute(Number(id));
+    promise
+      .then((data) => {
+        response.status(StatusCodes.OK).json(data);
+      })
+      .catch((error) => {
+        next(new createHttpError.NotFound(error?.message));
+      });
   };
 }
 
