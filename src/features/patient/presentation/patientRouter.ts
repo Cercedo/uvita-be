@@ -8,7 +8,7 @@ import {
 import GetAllPatientService from '@/features/patient/application/services/getAllPatientService';
 import PatientRepositoryImpl from '@/features/patient/infraestructure/repositories/patientRepositoryImpl';
 
-import requestValidatorMiddlewate from './middlewares/requestValidatorMiddlewate';
+import requestValidatorMiddleware from './middlewares/requestValidatorMiddleware';
 import {
   patientIdSchema,
   createPatientSchema,
@@ -35,18 +35,18 @@ const patientController = new PatientController(
 patientRouter.get('/', patientController.getAll);
 patientRouter.post(
   '/',
-  requestValidatorMiddlewate.handle('body', createPatientSchema),
+  requestValidatorMiddleware.handle('body', createPatientSchema),
   patientController.create
 );
 patientRouter.get(
   '/:id',
-  requestValidatorMiddlewate.handle('params', patientIdSchema),
+  requestValidatorMiddleware.handle('params', patientIdSchema),
   patientController.getById
 );
 patientRouter.put(
   '/:id',
-  requestValidatorMiddlewate.handle('params', patientIdSchema),
-  requestValidatorMiddlewate.handle('body', updatePatientSchema),
+  requestValidatorMiddleware.handle('params', patientIdSchema),
+  requestValidatorMiddleware.handle('body', updatePatientSchema),
   patientController.update
 );
 
