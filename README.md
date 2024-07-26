@@ -49,3 +49,4 @@ Check out these resources to learn more about writing clean code:
 
 - [Naming cheatsheet](https://github.com/kettanaito/naming-cheatsheet)
 - [clean-code-javascript](https://github.com/ryanmcdermott/clean-code-javascript)
+- [Hexagonal Architecture, there are always two sides to every story](https://medium.com/ssense-tech/hexagonal-architecture-there-are-always-two-sides-to-every-story-bc0780ed7d9c)
