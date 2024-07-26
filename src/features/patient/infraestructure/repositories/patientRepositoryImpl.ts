@@ -113,6 +113,13 @@ class PatientRepositoryImpl implements PatientRepository {
 
     return patient;
   }
+
+  public async update(
+    _id: number,
+    data: PatientEntity
+  ): Promise<PatientEntity> {
+    return data;
+  }
 }
 
 export default PatientRepositoryImpl;

@@ -6,13 +6,15 @@ import {
   CreatePatientService,
   GetByIdPatientService,
   GetAllPatientService,
+  UpdatePatientService,
 } from '../application/services';
 
 class PatientController {
   constructor(
     private getAllPatientService: GetAllPatientService,
     private createPatientService: CreatePatientService,
-    private getByIdPatientService: GetByIdPatientService
+    private getByIdPatientService: GetByIdPatientService,
+    private updatePatientService: UpdatePatientService
   ) {}
 
   public getAll = async (
@@ -39,6 +41,26 @@ class PatientController {
     const { id } = request.params;
 
     const promise = this.getByIdPatientService.execute(Number(id));
+    promise
+      .then((data) => {
+        response.status(StatusCodes.OK).json(data);
+      })
+      .catch((error) => {
+        next(new createHttpError.NotFound(error?.message));
+      });
+  };
+
+  public update = async (
+    request: Request,
+    response: Response,
+    next: NextFunction
+  ): Promise<void> => {
+    const { id } = request.params;
+
+    const promise = this.updatePatientService.execute({
+      id: Number(id),
+      data: request.body,
+    });
     promise
       .then((data) => {
         response.status(StatusCodes.OK).json(data);
