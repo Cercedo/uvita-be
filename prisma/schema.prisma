@@ -6,3 +6,34 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model Patient {
+  id Int @id @default(autoincrement())
+
+  // Choices
+  identifierType String?
+  sex String
+  maritalStatus String?
+  insuranceType String @default("NONE")
+
+  // Fields
+  //// Personal data
+  firstName String?
+  middleName String?
+  patternLastName String?
+  maternalLastName String?
+  identifier String?
+  birthDate DateTime?
+  age Int?
+  address String?
+  cellphone String?
+  email String?
+  isActive Boolean @default(true)
+  //// Medical data
+  code String
+  isIdentified Boolean @default(false)
+
+  // Meta
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt 
+}
