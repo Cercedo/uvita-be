@@ -1,6 +1,8 @@
 import { app } from '@/app';
 
-const port = 3000;
+import environment from './config/environment';
+
+const port = environment.PORT;
 
 app.listen(port, () => {
   // eslint-disable-next-line no-console
