@@ -1,20 +1,11 @@
 import z from 'zod';
 
-const IDENTIFIER_TYPE_CHOICES = [
-  'OTHER',
-  'NATIONAL_ID',
-  'PASSPORT',
-  'DRIVER_LICENSE',
-] as const;
-const SEX_CHOICES = ['MALE', 'FEMALE'] as const;
-const MARITAL_STATUS_CHOICES = [
-  'SINGLE',
-  'MARRIED',
-  'DIVORCED',
-  'WIDOWED',
-  'SEPARATED',
-] as const;
-const INSURANCE_TYPE = ['PUBLIC', 'PRIVATE', 'NONE'] as const;
+import {
+  IDENTIFIER_TYPE_CHOICES,
+  INSURANCE_TYPE,
+  MARITAL_STATUS_CHOICES,
+  SEX_CHOICES,
+} from './constants';
 
 const createPatientSchema = z.object({
   identifierType: z.enum(IDENTIFIER_TYPE_CHOICES).nullable(),
@@ -31,7 +22,6 @@ const createPatientSchema = z.object({
   address: z.string().nullable(),
   cellphone: z.string().nullable(),
   email: z.string().email().nullable(),
-  isIdentified: z.boolean(),
 });
 
 export default createPatientSchema;
