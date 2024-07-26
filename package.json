@@ -10,6 +10,7 @@
     "test:coverage": "jest --coverage",
     "test:watch": "jest --watch",
     "lint": "eslint . --ext ts --report-unused-disable-directives --max-warnings 0 ./src",
+    "format:check": "prettier --write --ignore-unknown --config .prettierrc ./src",
     "format": "prettier --write --ignore-unknown --config .prettierrc ./src",
     "prepare": "husky",
     "precommit": "lint-staged",
