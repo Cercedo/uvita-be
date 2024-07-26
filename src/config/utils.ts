@@ -1,8 +1,9 @@
 import dotenv, { DotenvParseOutput } from 'dotenv';
+import dotenvExpand from 'dotenv-expand';
 import { ZodSchema, infer as ZodInfer } from 'zod';
 
 export const loadDotenv = () => {
-  const output = dotenv.config();
+  const output = dotenvExpand.expand(dotenv.config());
 
   if (output.error) {
     throw output.error;
