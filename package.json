@@ -61,6 +61,7 @@
     "lint-staged": "^15.2.7",
     "nodemon": "^3.1.4",
     "prettier": "^3.3.3",
+    "prisma": "^5.17.0",
     "supertest": "^7.0.0",
     "ts-jest": "^29.2.3",
     "ts-node": "^10.9.2",
