@@ -1,0 +1,12 @@
+services:
+  db:
+    extends:
+      file: compose.yaml
+      service: db
+    healthcheck:
+      interval: 4s
+      timeout: 3s
+      start_period: 2s
+
+volumes:
+  db-data:

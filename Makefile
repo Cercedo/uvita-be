@@ -38,3 +38,11 @@ test:
 	npm run test
 
 pr-check: lint test
+
+
+####---- Docker ---------------------------------------------------------------
+docker-up-dev-db:
+	docker compose -f compose.dev.db.yaml up --build -d --wait
+
+docker-down-dev-db:
+	docker compose -f compose.dev.db.yaml down $(args)
