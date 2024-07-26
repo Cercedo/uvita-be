@@ -8,4 +8,6 @@ export const environmentSchema = z.object({
   DB_PASS: z.string(),
   DB_HOST: z.string(),
   DB_PORT: z.coerce.number(),
+
+  DATABASE_URL: z.string(),
 });
