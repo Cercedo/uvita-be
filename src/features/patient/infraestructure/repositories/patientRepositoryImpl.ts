@@ -75,6 +75,10 @@ class PatientRepositoryImpl implements PatientRepository {
   ): Promise<PatientEntity> {
     return data;
   }
+
+  public async delete(_id: number): Promise<void> {
+    return;
+  }
 }
 
 export default PatientRepositoryImpl;

@@ -7,6 +7,7 @@ import {
   GetByIdPatientService,
   GetAllPatientService,
   UpdatePatientService,
+  DeletePatientService,
 } from '../application/services';
 
 class PatientController {
@@ -14,7 +15,8 @@ class PatientController {
     private getAllPatientService: GetAllPatientService,
     private createPatientService: CreatePatientService,
     private getByIdPatientService: GetByIdPatientService,
-    private updatePatientService: UpdatePatientService
+    private updatePatientService: UpdatePatientService,
+    private deletePatientService: DeletePatientService
   ) {}
 
   public getAll = async (
@@ -64,6 +66,23 @@ class PatientController {
     promise
       .then((data) => {
         response.status(StatusCodes.OK).json(data);
+      })
+      .catch((error) => {
+        next(new createHttpError.NotFound(error?.message));
+      });
+  };
+
+  public delete = async (
+    request: Request,
+    response: Response,
+    next: NextFunction
+  ) => {
+    const { id } = request.params;
+
+    const promise = this.deletePatientService.execute({ id: Number(id) });
+    promise
+      .then(() => {
+        response.status(StatusCodes.NO_CONTENT).json();
       })
       .catch((error) => {
         next(new createHttpError.NotFound(error?.message));

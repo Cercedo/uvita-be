@@ -5,4 +5,5 @@ export interface PatientRepository {
   create: (data: PatientEntity) => Promise<PatientEntity>;
   getById: (id: number) => Promise<PatientEntity | null>;
   update: (id: number, data: PatientEntity) => Promise<PatientEntity>;
+  delete: (id: number) => Promise<void>;
 }

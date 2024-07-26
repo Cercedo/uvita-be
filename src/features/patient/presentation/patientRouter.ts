@@ -5,6 +5,7 @@ import {
   GetByIdPatientService,
   UpdatePatientService,
   GetAllPatientService,
+  DeletePatientService,
 } from '@/features/patient/application/services';
 import PatientRepositoryImpl from '@/features/patient/infraestructure/repositories/patientRepositoryImpl';
 
@@ -24,11 +25,13 @@ const getAllPatientService = new GetAllPatientService(patientRepositoryImpl);
 const createPatientService = new CreatePatientService(patientRepositoryImpl);
 const getByIdPatientService = new GetByIdPatientService(patientRepositoryImpl);
 const updatePatientService = new UpdatePatientService(patientRepositoryImpl);
+const deletePatientService = new DeletePatientService(patientRepositoryImpl);
 const patientController = new PatientController(
   getAllPatientService,
   createPatientService,
   getByIdPatientService,
-  updatePatientService
+  updatePatientService,
+  deletePatientService
 );
 
 ////---- Routes ---------------------------------------------------------------
@@ -48,6 +51,11 @@ patientRouter.put(
   requestValidatorMiddleware.handle('params', patientIdSchema),
   requestValidatorMiddleware.handle('body', updatePatientSchema),
   patientController.update
+);
+patientRouter.delete(
+  '/:id',
+  requestValidatorMiddleware.handle('params', patientIdSchema),
+  patientController.delete
 );
 
 export default patientRouter;
