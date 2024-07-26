@@ -42,7 +42,7 @@ class PatientController {
   ): Promise<void> => {
     const { id } = request.params;
 
-    const promise = this.getByIdPatientService.execute(Number(id));
+    const promise = this.getByIdPatientService.execute({ id: Number(id) });
     promise
       .then((data) => {
         response.status(StatusCodes.OK).json(data);
