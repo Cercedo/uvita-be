@@ -13,4 +13,4 @@ export type MaritalStatusChoices =
   | 'WIDOWED'
   | 'SEPARATED';
 
-export type InsuranceTypeChoices = 'PUBLIC' | 'PRIVATE' | 'NONE';
+export type InsuranceTypeChoices = 'NONE' | 'PUBLIC' | 'PRIVATE';
