@@ -1,4 +1,4 @@
-import { EnvSchema as environmentSchema } from './schemas';
+import { environmentSchema } from './schemas';
 import { parseEnvironment, loadDotenv } from './utils';
 
 const data = loadDotenv();

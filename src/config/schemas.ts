@@ -1,5 +1,5 @@
 import z from 'zod';
 
-export const EnvSchema = z.object({
+export const environmentSchema = z.object({
   PORT: z.coerce.number(),
 });
