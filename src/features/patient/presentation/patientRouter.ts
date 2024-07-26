@@ -4,8 +4,8 @@ import {
   CreatePatientService,
   GetByIdPatientService,
   UpdatePatientService,
+  GetAllPatientService,
 } from '@/features/patient/application/services';
-import GetAllPatientService from '@/features/patient/application/services/getAllPatientService';
 import PatientRepositoryImpl from '@/features/patient/infraestructure/repositories/patientRepositoryImpl';
 
 import requestValidatorMiddleware from './middlewares/requestValidatorMiddleware';
