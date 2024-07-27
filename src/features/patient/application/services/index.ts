@@ -1,5 +1,6 @@
 import CreatePatientService from './createPatientService';
 import DeletePatientService from './deletePatientService';
+import GeneratePatientCodeService from './generatePatientCodeService';
 import GetAllPatientService from './getAllPatientService';
 import GetByIdPatientService from './getByIdPatientService';
 import UpdatePatientService from './updatePatientService';
@@ -10,4 +11,5 @@ export {
   GetByIdPatientService,
   UpdatePatientService,
   DeletePatientService,
+  GeneratePatientCodeService,
 };

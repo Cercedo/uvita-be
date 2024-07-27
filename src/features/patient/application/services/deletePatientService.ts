@@ -10,12 +10,11 @@ class DeletePatientService
   public async execute(params: { id: number }): Promise<void> {
     const { id } = params;
 
-    const patient = await this.patientRepository.getById(id);
-    if (!patient) {
+    try {
+      await this.patientRepository.delete(id);
+    } catch (error) {
       throw new Error(`Patient with id ${id} not found.`);
     }
-
-    await this.patientRepository.delete(id);
   }
 }
 

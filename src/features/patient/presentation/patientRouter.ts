@@ -6,8 +6,15 @@ import {
   UpdatePatientService,
   GetAllPatientService,
   DeletePatientService,
+  GeneratePatientCodeService,
 } from '@/features/patient/application/services';
+import prismaClient from '@/features/patient/infraestructure/orm/prismaClient';
 import PatientRepositoryImpl from '@/features/patient/infraestructure/repositories/patientRepositoryImpl';
+
+import {
+  CalculatePatientAgeService,
+  DeterminePatientIsIdentifiedService,
+} from '../application/services/utils';
 
 import requestValidatorMiddleware from './middlewares/requestValidatorMiddleware';
 import {
@@ -20,12 +27,27 @@ import PatientController from './patientController';
 ////---- Initialization -------------------------------------------------------
 const patientRouter = express.Router();
 
-const patientRepositoryImpl = new PatientRepositoryImpl();
+const patientRepositoryImpl = new PatientRepositoryImpl(prismaClient);
+
+const generatePatientCodeService = new GeneratePatientCodeService();
+const calculatePatientAgeService = new CalculatePatientAgeService();
+const determinePatientIsIdentifiedService =
+  new DeterminePatientIsIdentifiedService();
 const getAllPatientService = new GetAllPatientService(patientRepositoryImpl);
-const createPatientService = new CreatePatientService(patientRepositoryImpl);
+const createPatientService = new CreatePatientService(
+  patientRepositoryImpl,
+  generatePatientCodeService,
+  calculatePatientAgeService,
+  determinePatientIsIdentifiedService
+);
 const getByIdPatientService = new GetByIdPatientService(patientRepositoryImpl);
-const updatePatientService = new UpdatePatientService(patientRepositoryImpl);
+const updatePatientService = new UpdatePatientService(
+  patientRepositoryImpl,
+  calculatePatientAgeService,
+  determinePatientIsIdentifiedService
+);
 const deletePatientService = new DeletePatientService(patientRepositoryImpl);
+
 const patientController = new PatientController(
   getAllPatientService,
   createPatientService,
