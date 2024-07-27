@@ -16,6 +16,9 @@
     "precommit": "lint-staged",
     "commitlint": "commitlint --edit"
   },
+  "prisma": {
+    "seed": "ts-node prisma/seed.ts"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Cercedo/uvita-be.git"
