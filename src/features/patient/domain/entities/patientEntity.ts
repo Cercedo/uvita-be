@@ -20,7 +20,7 @@ export interface PatientEntity {
   patternalLastName: string | null;
   maternalLastName: string | null;
   identifier: string | null;
-  birthDate: Date | null;
+  birthDate: Date | string | null;
   age: number | null;
   address: string | null;
   cellphone: string | null;
