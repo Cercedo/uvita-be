@@ -19,7 +19,7 @@ const updatePatientSchema = z
     patternalLastName: z.string().nullable(),
     maternalLastName: z.string().nullable(),
     identifier: z.string().nullable(),
-    birthDate: z.coerce.date().nullable(),
+    birthDate: z.string().datetime().nullable(),
     address: z.string().nullable(),
     cellphone: z.string().nullable(),
     email: z.string().email().nullable(),
