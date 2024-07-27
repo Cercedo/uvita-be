@@ -31,7 +31,9 @@ class PatientController {
     request: Request,
     response: Response
   ): Promise<void> => {
-    const data = await this.createPatientService.execute(request.body);
+    const data = await this.createPatientService.execute({
+      data: request.body,
+    });
     response.status(StatusCodes.CREATED).json(data);
   };
 
