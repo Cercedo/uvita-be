@@ -7,14 +7,40 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+////---- Enums ----------------------------------------------------------------
+enum IdentifierType {
+  OTHER
+  NATIONAL_ID
+  PASSPORT
+  FOREIGN_CARD
+}
+enum Sex {
+  MALE
+  FEMALE
+}
+enum MaritalStatus {
+  SINGLE
+  MARRIED
+  DIVORCED
+  WIDOWED
+  SEPARATED
+}
+enum InsuranceType {
+  NONE
+  PUBLIC
+  PRIVATE
+}
+
+
+////---- Models ---------------------------------------------------------------
 model Patient {
   id Int @id @default(autoincrement())
 
   // Choices
-  identifierType String?
-  sex String
-  maritalStatus String?
-  insuranceType String @default("NONE")
+  identifierType IdentifierType?
+  sex Sex
+  maritalStatus MaritalStatus?
+  insuranceType InsuranceType @default(NONE)
 
   // Fields
   //// Personal data
