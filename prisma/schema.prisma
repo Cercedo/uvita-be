@@ -20,7 +20,7 @@ model Patient {
   //// Personal data
   firstName String?
   middleName String?
-  patternLastName String?
+  patternalLastName String?
   maternalLastName String?
   identifier String?
   birthDate DateTime?
