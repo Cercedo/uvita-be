@@ -29,11 +29,32 @@ Backend application designed to streamline and manage all aspects of a clinic's 
     npm install
     ```
 
-3. Start the development server.
+3. Create and configure the `.env` file based on `.env.example`.
+
+    ```bash
+    cp .env.example .env
+    ```
+
+4. Set up the database.
+   1. Create the DB using Docker container.
+
+       ```bash
+       make docker-up-dev-db
+       ```
+
+   2. Run the migrations.
+
+       ```bash
+       npm run migrate -- --name init
+       ```
+
+5. Start the development server.
 
     ```bash
     npm run dev
     ```
+
+6. Navigate to <http://localhost:3000/api> in your browser.
 
 Now, you're ready to start building your application!
 
