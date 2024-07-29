@@ -14,7 +14,8 @@
     "format": "prettier --write --ignore-unknown --config .prettierrc ./src",
     "prepare": "husky",
     "precommit": "lint-staged",
-    "commitlint": "commitlint --edit"
+    "commitlint": "commitlint --edit",
+    "migrate": "prisma migrate dev"
   },
   "prisma": {
     "seed": "ts-node prisma/seed.ts"

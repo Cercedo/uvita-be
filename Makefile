@@ -46,3 +46,11 @@ docker-up-dev-db:
 
 docker-down-dev-db:
 	docker compose -f compose.dev.db.yaml down $(args)
+
+
+####---- Prisma ---------------------------------------------------------------
+p-migrate:
+	npm run migrate
+
+p-studio:
+	npx prisma studio
