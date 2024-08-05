@@ -37,7 +37,7 @@ lint:
 test:
 	npm run test
 
-pr-check: lint test
+pr-check: lint f-check test
 
 
 ####---- Docker ---------------------------------------------------------------
